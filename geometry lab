@@ -1,0 +1,81 @@
+# GEOMETRY
+#
+# LAB: GEOMETRY
+#
+# Write a program that can store and manipulate rectangles and points.
+#
+# Implement two classes: Point and Rectangle in modules named point and rectangle respectively.
+import time
+point_list = list([])
+class point:
+    def __init__(self, x_value, y_value):
+        self.x_value = x_value
+        self.y_value = y_value
+        return
+    # def store_point(self):
+    #     return point_list[store_point]
+    def __str__(self):
+        return 'point {}, {}'.format(self.x_value, self.y_value)
+    def __repr__(self):
+        return 'point {}, {}'.format(self.x_value, self.y_value)
+
+class rectangle:
+    def __init__(self, top_left, width, height):
+        self.top_left = top_left
+        self.width = width
+        self.height = height
+        print("Length = {}, Width = {}".format(height,width))
+        def top_left(self):
+            return point_list[0]
+        def width(self):
+            return (point_list[1]-point_list[0])
+        def height(self):
+            return (point_list[2]-point_list[0])
+    def __str__(self):
+        return 'point {}, {}'.format(self.x_value, self.y_value)
+    def __repr__(self):
+        return 'point {}, {}'.format(self.x_value, self.y_value)
+def create_points():
+    point_count = 0
+    while point_count < 3:
+        user_x = input("Enter X value:\n")
+        user_y = input("Enter Y value:\n")
+        point_form = ("({}, {})".format(user_x,user_y))
+        print(point_form)
+        print("saving point..")
+        time.sleep(2)
+        point_count = point_count + 1
+        point_list.append((point_form))
+    else:
+        print(point_list)
+create_points()
+rectangle(create_points)
+
+# Points should store their x and y coordinates
+# Rectangles should store their top left point, then a w width and h height
+# Both should have __repr__ and __eq__ implemented
+# Then create some top-level functions in those modules that know how to operate on instances of each class.
+#
+# In the point module:
+#
+# Find the distance between two points
+# Return a new point moved by a specified amount
+# In the rectangle module:
+#
+# Know if a point is inside a rectangle
+# Find the center point of a rectangle
+# All functions, even magic methods, should have tests.
+#
+# ADVANCED
+#
+# Create a bunch of Point instances and put them in a container.
+#
+# Then, Given a single Point instance, return all of the point instances within a given radius.
+#
+# SUPER ADVANCED
+#
+# Implement the Haversine formula to compute the distance between two given points on the earth.
+#
+# Haversine Formula Wiki
+#
+# Haversine Formula Python Stack Overflow
